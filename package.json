@@ -1,0 +1,13 @@
+{
+  "name": "paranormal-sighting-webapp",
+  "version": "1.0.0",
+  "description": "A platform for sharing ghosty encounters",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "Sai Sanjana",
+  "license": "ISC"
+}

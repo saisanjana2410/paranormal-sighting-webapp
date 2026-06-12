@@ -1,0 +1,73 @@
+package.json: type: "module"
+
+this tells Node.js to use ES modules instead of CommonJS
+
+ES modules use import/export
+CommonJS uses require/module.exports
+
+in CommonJS:
+
+* require() is used to import files
+* __dirname and __filename are available automatically
+
+in ES modules:
+
+* import/export is used instead of require
+* __dirname and __filename are NOT available by default
+
+to get __filename and __dirname in ES modules (before Node v20):
+
+import path from "node:path"
+import url from "node:url"
+
+const __filename = url.fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+in Node.js v20+, import.meta is easier to use and modern features are better supported
+
+current working directory (CWD):
+
+* this is the folder where you run the node command
+* accessed using process.cwd()
+* important: it may NOT be the same folder as your file
+
+relative paths:
+
+* depend on the current working directory (CWD)
+* not based on the file location
+* this can cause bugs if you run code from different folders
+
+important point:
+
+* CWD changes based on where you run the command
+* so relative paths are not always safe
+
+OS note:
+
+* file paths differ between Windows, Linux, Mac
+* so hardcoding paths like "C:\folder\file" is not safe
+
+best practice: use path module
+
+path module:
+
+* helps build safe file paths across all operating systems
+
+example:
+const pathToResource = path.join(__dirname, "Folder", "File.ext")
+
+getting correct directory in ES modules:
+
+import path from "node:path"
+import url from "node:url"
+
+const __dirname = path.dirname(url.fileURLToPath(import.meta.url))
+
+fs module (file system):
+used to work with files
+
+* read files
+* create files
+* update files
+* delete files
+* rename files
