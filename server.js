@@ -3,6 +3,7 @@ import { serveStatic } from './utils/serveStatic.js'
 import { getData } from './utils/getData.js'
 import { handleGet, handlePost } from './handlers/routeHandlers.js'
 
+
 const PORT = 8000
 
 const __dirname = import.meta.dirname
