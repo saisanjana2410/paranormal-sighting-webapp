@@ -47,14 +47,6 @@ Users can read submitted ghost sightings, upload their own, and follow a live "s
 ### Prerequisites
 - Node.js v20 or newer
 
-### Install
-
-```bash
-git clone https://github.com/<your-username>/from-the-other-side.git
-cd from-the-other-side
-npm install
-```
-
 ### Run
 
 ```bash
